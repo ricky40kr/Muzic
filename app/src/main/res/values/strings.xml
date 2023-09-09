@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Muzic</string>
+    <string name="muzic">Muzic</string>
+    <string name="song_name">Song Name</string>
+    <string name="title_activity_song_player">SongPlayer</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+    <string name="no_song_error">No Songs Found!</string>
+    <string name="app_logo">App logo</string>
+    <string name="default_time">0:00</string>
+    <string name="song_logo">song logo</string>
+    <string name="unknown_artist">Unknown Artist</string>
+    <string name="separator">·</string>
+</resources>
