@@ -22,7 +22,7 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:contentDescription="@string/app_logo"
-            android:padding="8dp"
+            android:padding="10dp"
             android:layout_gravity="center"
             android:src="@drawable/muzic_logo_transparent" />
 
@@ -30,7 +30,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/muzic"
-            android:textSize="22sp"/>
+            android:textSize="18sp"/>
     </LinearLayout>
 
     <ScrollView
