@@ -24,6 +24,7 @@
             android:layout_height="wrap_content"
             android:ellipsize="marquee"
             android:paddingVertical="12dp"
+            android:gravity="center"
             android:paddingHorizontal="20dp"
             android:singleLine="true"
             android:text="@string/song_name"
@@ -31,10 +32,11 @@
 
         <TextView
             android:id="@+id/song_artist"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:singleLine="true"
             android:ellipsize="marquee"
+            android:gravity="center"
             android:paddingHorizontal="20dp"
             android:text="@string/unknown_artist"
             android:textColor="#7C7C7C"

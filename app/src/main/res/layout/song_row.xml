@@ -53,7 +53,7 @@
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
+                    android:layout_marginTop="3dp"
                     android:gravity="center_vertical">
 
                     <TextView
@@ -93,6 +93,17 @@
             </LinearLayout>
 
         </LinearLayout>
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/playing_muzic_anime"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            app:lottie_rawRes="@raw/playing_muzic"
+            android:layout_gravity="end"
+            android:paddingStart="22dp"
+            android:paddingVertical="22dp"
+            app:lottie_loop="true"
+            />
 
     </androidx.cardview.widget.CardView>
 

@@ -27,8 +27,7 @@ public class PlayerActivity extends AppCompatActivity{
     ImageView playPauseBtn, nxtBtn, prevBtn, musicIcon;
     ArrayList<SongModel> songs;
     SongModel currSong;
-    MediaPlayer mediaPlayer= MediaPlayerSingleton.getInstance();
-    private boolean completionListenerTriggered = false;
+    static MediaPlayer mediaPlayer= MediaPlayerSingleton.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

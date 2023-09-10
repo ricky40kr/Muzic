@@ -78,6 +78,8 @@ public class MainActivity extends AppCompatActivity {
             Collections.reverse(songs);
             SongListAdapter adapter=new SongListAdapter(songs, getApplicationContext());
             recyclerView.setAdapter(adapter);
+            String numSongs=songs.size()+" Songs";
+            Toast.makeText(this, numSongs, Toast.LENGTH_SHORT).show();
         }
     }
 

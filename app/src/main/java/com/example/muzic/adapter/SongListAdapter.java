@@ -16,6 +16,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.airbnb.lottie.LottieAnimationView;
 import com.example.muzic.util.PlayerActivity;
 import com.example.muzic.R;
 import com.example.muzic.model.MediaPlayerSingleton;
@@ -68,10 +69,14 @@ public class SongListAdapter extends RecyclerView.Adapter<SongListAdapter.ViewHo
             holder.title.setTextColor(Color.parseColor("#009bff"));
             holder.artist.setTextColor(Color.parseColor("#009bff"));
             holder.duration.setTextColor(Color.parseColor("#009bff"));
+            holder.playingMuzic.setVisibility(View.VISIBLE);
+            if(MediaPlayerSingleton.getInstance().isPlaying()) holder.playingMuzic.playAnimation();
         }else{
             holder.title.setTextColor(Color.parseColor("#000000"));
             holder.artist.setTextColor(Color.parseColor("#000000"));
             holder.duration.setTextColor(Color.parseColor("#000000"));
+            holder.playingMuzic.setVisibility(View.GONE);
+            holder.playingMuzic.pauseAnimation();
         }
 
         // on Click songs in the list
@@ -95,6 +100,7 @@ public class SongListAdapter extends RecyclerView.Adapter<SongListAdapter.ViewHo
         ImageView albumArtWork;
         TextView duration;
         TextView artist;
+        LottieAnimationView playingMuzic;
 
         public ViewHolder(View itemView){
             super(itemView);
@@ -102,6 +108,7 @@ public class SongListAdapter extends RecyclerView.Adapter<SongListAdapter.ViewHo
             albumArtWork=itemView.findViewById(R.id.song_logo);
             duration=itemView.findViewById(R.id.song_duration);
             artist=itemView.findViewById(R.id.song_artist);
+            playingMuzic=itemView.findViewById(R.id.playing_muzic_anime);
         }
     }
 
@@ -122,6 +129,5 @@ public class SongListAdapter extends RecyclerView.Adapter<SongListAdapter.ViewHo
                 TimeUnit.MILLISECONDS.toMinutes(millis) % TimeUnit.HOURS.toMinutes(1),
                 TimeUnit.MILLISECONDS.toSeconds(millis) % TimeUnit.MINUTES.toSeconds(1));
     }
-
 
 }
