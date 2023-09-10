@@ -89,7 +89,7 @@ public class MainActivity extends AppCompatActivity {
 
     void requestPermission(){
         if(ActivityCompat.shouldShowRequestPermissionRationale(MainActivity.this,Manifest.permission.READ_EXTERNAL_STORAGE)){
-            Toast.makeText(MainActivity.this, "Permission Error!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(MainActivity.this, "Storage Permission Needed!", Toast.LENGTH_SHORT).show();
         }else{
             ActivityCompat.requestPermissions(MainActivity.this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},123); // requestCode added is random
         }
