@@ -4,7 +4,6 @@ import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
-import android.util.Log;
 import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.TextView;
@@ -18,7 +17,6 @@ import com.example.muzic.model.SongModel;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 
 public class PlayerActivity extends AppCompatActivity{
