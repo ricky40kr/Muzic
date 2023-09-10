@@ -83,7 +83,7 @@ public class PlayerActivity extends AppCompatActivity{
             }
         });
 
-//        mediaPlayer.setOnCompletionListener(mediaPlayer-> playNextSong());
+        mediaPlayer.setOnCompletionListener(mediaPlayer-> playNextSong());
 
     }
 

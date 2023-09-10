@@ -11,16 +11,15 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.airbnb.lottie.LottieAnimationView;
-import com.example.muzic.util.PlayerActivity;
 import com.example.muzic.R;
 import com.example.muzic.model.MediaPlayerSingleton;
 import com.example.muzic.model.SongModel;
+import com.example.muzic.util.PlayerActivity;
 
 import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;

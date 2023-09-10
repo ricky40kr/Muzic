@@ -65,6 +65,7 @@ public class SongModel implements Parcelable {
         title = in.readString();
         duration = in.readString();
         artist=in.readString();
+        albumArt= Uri.parse(in.readString());
     }
 
     public static final Creator<SongModel> CREATOR = new Creator<SongModel>() {
@@ -90,5 +91,6 @@ public class SongModel implements Parcelable {
         dest.writeString(title);
         dest.writeString(duration);
         dest.writeString(artist);
+        dest.writeString(String.valueOf(albumArt));
     }
 }
