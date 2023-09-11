@@ -61,6 +61,7 @@
             android:id="@+id/music_icon_big"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:scaleType="centerCrop"
             android:background="#16000000"
             android:contentDescription="@string/song_logo"
             android:src="@drawable/baseline_music_note_24"
