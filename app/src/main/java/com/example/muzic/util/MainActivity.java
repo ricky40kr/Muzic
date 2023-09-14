@@ -46,7 +46,6 @@ public class MainActivity extends AppCompatActivity {
 
         if(!checkPermission()){
             requestPermission();
-            return;
         }
 
         String[] projection={
