@@ -16,6 +16,8 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.airbnb.lottie.LottieAnimationView;
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.example.muzic.R;
 import com.example.muzic.model.MediaPlayerSingleton;
 import com.example.muzic.model.SongModel;
@@ -52,13 +54,10 @@ public class SongListAdapter extends RecyclerView.Adapter<SongListAdapter.ViewHo
         // for MusicArtWork
         Uri artWorkUri=songData.getAlbumArt();
         if(artWorkUri!=null) {
-            // set uri to ImageView
-            holder.albumArtWork.setImageURI(artWorkUri);
-
-            // to sure that Uri have an artWork
-            if (holder.albumArtWork.getDrawable()==null){
-                holder.albumArtWork.setImageResource(R.drawable.baseline_music_note_24);
-            }
+            // Load and set album art using Glide
+            Glide.with(context).load(artWorkUri).diskCacheStrategy(DiskCacheStrategy.RESOURCE).error(R.drawable.baseline_music_note_24).into(holder.albumArtWork);
+        }else{
+            holder.albumArtWork.setImageResource(R.drawable.baseline_music_note_24);
         }
 
         setAnimation(holder.itemView, position);
@@ -83,7 +82,7 @@ public class SongListAdapter extends RecyclerView.Adapter<SongListAdapter.ViewHo
             MediaPlayerSingleton.getInstance().reset();
             MediaPlayerSingleton.currIdx= holder.getAdapterPosition();
             Intent intent= new Intent(context, PlayerActivity.class);
-            intent.putParcelableArrayListExtra("LIST", songs);
+            intent.putExtra("LIST", songs);
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             context.startActivity(intent);
         });
@@ -121,12 +120,22 @@ public class SongListAdapter extends RecyclerView.Adapter<SongListAdapter.ViewHo
         }
     }
 
-    public static String timeConvert(String time){
-        long millis=Long.parseLong(time);
+    public static String timeConvert(String time) {
+        if (time == null) {
+            return "00:00"; // Return a default value or handle it as needed
+        }
 
-        return String.format("%02d:%02d",
-                TimeUnit.MILLISECONDS.toMinutes(millis) % TimeUnit.HOURS.toMinutes(1),
-                TimeUnit.MILLISECONDS.toSeconds(millis) % TimeUnit.MINUTES.toSeconds(1));
+        try {
+            long millis = Long.parseLong(time);
+
+            return String.format("%02d:%02d",
+                    TimeUnit.MILLISECONDS.toMinutes(millis) % TimeUnit.HOURS.toMinutes(1),
+                    TimeUnit.MILLISECONDS.toSeconds(millis) % TimeUnit.MINUTES.toSeconds(1));
+        } catch (NumberFormatException e) {
+            // Handle the case where parsing the time fails
+            return "00:00"; // Or return an appropriate default value
+        }
     }
+
 
 }

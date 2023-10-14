@@ -155,12 +155,17 @@ public class PlayerActivity extends AppCompatActivity{
         }
     }
 
-    public static String timeConvert(String time){
-        long millis=Long.parseLong(time);
+    public static String timeConvert(String time) {
+        if (time == null) {
+            return "00:00"; // Return a default value or handle it as needed
+        }
+
+        long millis = Long.parseLong(time);
 
         return String.format("%02d:%02d",
-                TimeUnit.MILLISECONDS.toMinutes(millis)%TimeUnit.HOURS.toMinutes(1),
-                TimeUnit.MILLISECONDS.toSeconds(millis)%TimeUnit.MINUTES.toSeconds(1));
+                TimeUnit.MILLISECONDS.toMinutes(millis) % TimeUnit.HOURS.toMinutes(1),
+                TimeUnit.MILLISECONDS.toSeconds(millis) % TimeUnit.MINUTES.toSeconds(1));
     }
+
 
 }
